@@ -36,8 +36,8 @@ export default function Page() {
       </nav>
 
       {/* HERO — Resend style: centered, huge text, minimal */}
-      <section className="pt-40 sm:pt-52 pb-24 sm:pb-36 px-6 text-center">
-        <h1 className="text-[40px] sm:text-[64px] md:text-[72px] font-bold leading-[1.05] tracking-tight mb-6">
+      <section className="pt-44 sm:pt-52 pb-24 sm:pb-36 px-6 text-center">
+        <h1 className="text-[32px] sm:text-[64px] md:text-[72px] font-bold leading-[1.05] tracking-tight mb-6">
           Telegram-боты<br />для бизнеса
         </h1>
         <p className="text-[17px] sm:text-[19px] text-secondary max-w-[520px] mx-auto mb-10 leading-relaxed">
@@ -56,7 +56,7 @@ export default function Page() {
       {/* TRUST BAR */}
       <section className="border-t border-b py-10 px-6" style={{borderColor:'rgba(255,255,255,0.06)'}}>
         <p className="text-center text-[13px] text-tertiary mb-6">Более 50 ботов для бизнеса по всему миру</p>
-        <div className="flex justify-center gap-12 sm:gap-16 flex-wrap">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-[500px] mx-auto">
           {[['50+','проектов'],['1-3 дня','срок'],['от 2500₽','цена'],['24/7','работа ботов']].map(([a,b])=>(
             <div key={b} className="text-center">
               <div className="text-[20px] sm:text-[24px] font-bold">{a}</div>
