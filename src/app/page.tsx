@@ -56,6 +56,7 @@ export default function Page() {
           </a>
           <div className="hidden sm:flex gap-5 text-[13px]" style={dim}>
             {['Услуги','Цены','FAQ'].map(x=><a key={x} href={`#${x.toLowerCase()}`} className="no-underline hover:text-white transition-colors" style={dim}>{x}</a>)}
+            <a href="/blog" className="no-underline hover:text-white transition-colors" style={dim}>Блог</a>
           </div>
           <button onClick={open} className="h-8 px-4 rounded-lg text-xs font-semibold text-white cursor-pointer" style={grad}>Заказать</button>
         </div>

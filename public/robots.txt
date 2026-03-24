@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nox-bots.vercel.app/sitemap.xml
+
+# AI crawlers welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
