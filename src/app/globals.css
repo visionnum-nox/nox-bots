@@ -12,17 +12,80 @@ body {
 }
 
 ::selection { background: rgba(255,255,255,0.15); }
-
 a { color: inherit; }
 
-/* Resend-style: simple, clean */
-.border-subtle { border: 1px solid rgba(255,255,255,0.08); }
-.bg-card { background: rgba(255,255,255,0.03); }
-.text-secondary { color: #a1a1a1; }
-.text-tertiary { color: #666; }
+.border-s { border: 1px solid rgba(255,255,255,0.08); }
+.bg-c { background: rgba(255,255,255,0.03); }
+.t2 { color: #a1a1a1; }
+.t3 { color: #666; }
 
-.hover-lift { transition: transform 0.2s, box-shadow 0.2s; }
-.hover-lift:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.hover-up { transition: transform 0.2s, box-shadow 0.2s; }
+.hover-up:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
 
-/* Smooth FAQ */
 .faq-body { overflow: hidden; transition: max-height 0.3s ease, opacity 0.25s ease; }
+
+/* Dot grid background */
+.dot-grid {
+  background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Code block */
+.code-block {
+  background: #0a0a0f;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-x: auto;
+}
+.code-block .keyword { color: #c084fc; }
+.code-block .string { color: #86efac; }
+.code-block .comment { color: #555; }
+.code-block .func { color: #93c5fd; }
+.code-block .prop { color: #fbbf24; }
+
+/* Gradient border card */
+.glow-border {
+  position: relative;
+  background: #0a0a0f;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.03));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Logo bar fade */
+.logo-bar { 
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Chat mockup */
+.chat-bubble {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px 12px 12px 4px;
+  padding: 10px 14px;
+  font-size: 13px;
+}
+.chat-bubble.bot {
+  border-radius: 12px 12px 4px 12px;
+  background: rgba(255,255,255,0.08);
+}
+
+/* Typing indicator */
+@keyframes blink { 0%,100%{opacity:0.3} 50%{opacity:1} }
+.typing span { animation: blink 1.4s infinite; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #666; margin: 0 2px; }
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+.typing span:nth-child(3) { animation-delay: 0.4s; }
