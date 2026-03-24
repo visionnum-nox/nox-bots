@@ -115,9 +115,9 @@ export default function Page() {
       </section>
 
       {/* ═══ INTEGRATE — Code block ═══ */}
-      <section className="py-32 sm:py-44 px-6">
+      <section className="py-36 sm:py-52 px-6">
         <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-12 reveal">
+          <div className="text-center mb-16 reveal">
             <p className="text-[15px] t2 max-w-[520px] mx-auto leading-relaxed">
               Простой и понятный процесс. Опишите задачу — получите готового бота с исходным кодом и документацией.
             </p>
@@ -153,7 +153,7 @@ export default function Page() {
       </section>
 
       {/* ═══ FEATURES ═══ */}
-      <section id="features" className="section-glow py-32 sm:py-44 px-6">
+      <section id="features" className="section-glow py-36 sm:py-52 px-6">
         <div className="max-w-[1200px] mx-auto">
 
           <div className="text-center mb-20 reveal">
@@ -161,7 +161,7 @@ export default function Page() {
             <p className="t2 text-[16px] max-w-[500px] mx-auto leading-relaxed">Мы — команда разработчиков, которая использует ИИ для создания ботов. Наша цель — платформа, которая просто работает.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
             <div className="feat-card reveal">
               <h3 className="text-[18px] font-semibold mb-2">Бот записи на услуги</h3>
               <p className="t2 text-[14px] leading-relaxed mb-5">Клиенты выбирают услугу, дату, время. Мастер получает уведомление. Напоминание клиенту за 1 час. Нет пропущенных записей.</p>
@@ -175,7 +175,7 @@ export default function Page() {
           </div>
 
           {/* Chat mockup with typing animation */}
-          <div className="feat-card mb-20 reveal">
+          <div className="feat-card mb-24 reveal">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="flex flex-col justify-center">
                 <h3 className="text-[24px] sm:text-[28px] font-bold mb-3">Как выглядит бот записи</h3>
@@ -214,7 +214,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
             <div className="feat-card reveal">
               <h3 className="text-[18px] font-semibold mb-2">Бот-каталог / магазин</h3>
               <p className="t2 text-[14px] leading-relaxed mb-5">Витрина товаров в Telegram. Фото, описания, корзина, оформление. Без комиссий маркетплейсов.</p>
@@ -227,7 +227,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="feat-card reveal">
               <h3 className="text-[18px] font-semibold mb-2">Бот лидогенерации</h3>
               <p className="t2 text-[14px] leading-relaxed mb-5">Квиз-воронка → сбор контактов → автоматическая квалификация → CRM. Конверсия в 3-5× выше формы.</p>
@@ -244,7 +244,7 @@ export default function Page() {
       </section>
 
       {/* ═══ QUOTE ═══ */}
-      <section className="py-32 sm:py-44 px-6">
+      <section className="py-36 sm:py-52 px-6">
         <div className="max-w-[700px] mx-auto text-center reveal">
           <p className="text-[20px] sm:text-[26px] leading-[1.5] mb-8" style={{fontFamily:"'Georgia', serif"}}>
             &ldquo;Бот записи окупился за первую неделю. Клиенты записываются сами, я экономлю 3 часа в день. Лучшая инвестиция.&rdquo;
@@ -260,7 +260,7 @@ export default function Page() {
       </section>
 
       {/* ═══ EVERYTHING IN YOUR CONTROL ═══ */}
-      <section className="section-glow py-32 sm:py-44 px-6">
+      <section className="section-glow py-36 sm:py-52 px-6">
         <div className="max-w-[1200px] mx-auto">
           <h2 className="text-[32px] sm:text-[44px] font-bold tracking-tight text-center mb-16 reveal">Всё под вашим контролем</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -280,7 +280,7 @@ export default function Page() {
       </section>
 
       {/* ═══ PRICING ═══ */}
-      <section id="pricing" className="py-32 sm:py-44 px-6">
+      <section id="pricing" className="py-36 sm:py-52 px-6">
         <div className="max-w-[900px] mx-auto">
           <h2 className="text-[32px] sm:text-[44px] font-bold tracking-tight text-center mb-4 reveal">Цены</h2>
           <p className="text-center t2 text-[16px] mb-16 reveal reveal-d1">Фиксированная стоимость. Без сюрпризов.</p>
@@ -308,7 +308,7 @@ export default function Page() {
       </section>
 
       {/* ═══ RESULTS ═══ */}
-      <section className="section-glow py-32 sm:py-44 px-6">
+      <section className="section-glow py-36 sm:py-52 px-6">
         <div className="max-w-[900px] mx-auto">
           <h2 className="text-[32px] sm:text-[44px] font-bold tracking-tight text-center mb-16 reveal">Результаты</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -328,7 +328,7 @@ export default function Page() {
       </section>
 
       {/* ═══ FAQ ═══ */}
-      <section id="faq" className="py-32 sm:py-44 px-6">
+      <section id="faq" className="py-36 sm:py-52 px-6">
         <div className="max-w-[600px] mx-auto">
           <h2 className="text-[32px] sm:text-[44px] font-bold tracking-tight text-center mb-16 reveal">Вопросы</h2>
           {[
@@ -352,7 +352,7 @@ export default function Page() {
       </section>
 
       {/* ═══ CTA ═══ */}
-      <section className="section-glow py-32 sm:py-44 px-6 text-center">
+      <section className="section-glow py-36 sm:py-52 px-6 text-center">
         <div className="reveal">
           <h2 className="text-[32px] sm:text-[44px] font-bold tracking-tight mb-4" style={{fontFamily:"'Georgia', serif"}}>
             Боты для бизнеса.<br />Доступно сегодня.
