@@ -75,8 +75,50 @@ const FAQ = [
   { q: 'Работаете ли с зарубежными клиентами?', a: 'Да. Оплата в рублях, евро или USDT. Вся коммуникация через Telegram.' },
 ];
 
+const BOT_TYPES = [
+  { value: 'booking', label: '📅 Бот записи на услуги' },
+  { value: 'catalog', label: '🛍 Бот-каталог / магазин' },
+  { value: 'ai_chat', label: '🤖 ИИ чат-бот / поддержка' },
+  { value: 'crm', label: '📊 Бот-CRM / автоматизация' },
+  { value: 'leads', label: '🎯 Бот для лидогенерации' },
+  { value: 'monitoring', label: '🔔 Бот уведомлений' },
+  { value: 'other', label: '📁 Другое' },
+];
+
 export default function Landing() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [showOrder, setShowOrder] = useState(false);
+  const [orderType, setOrderType] = useState('');
+  const [orderSent, setOrderSent] = useState(false);
+  const [orderLoading, setOrderLoading] = useState(false);
+
+  const submitOrder = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setOrderLoading(true);
+    const fd = new FormData(e.currentTarget);
+    try {
+      await fetch('/api/order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: fd.get('name'),
+          contact: fd.get('contact'),
+          botType: fd.get('botType'),
+          description: fd.get('description'),
+        }),
+      });
+      setOrderSent(true);
+    } catch {
+      alert('Ошибка отправки. Попробуйте ещё раз.');
+    }
+    setOrderLoading(false);
+  };
+
+  const openOrderForm = (type?: string) => {
+    setOrderType(type || '');
+    setOrderSent(false);
+    setShowOrder(true);
+  };
 
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg)' }}>
@@ -117,9 +159,9 @@ export default function Landing() {
             Используем ИИ — поэтому быстрее и дешевле конкурентов.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://t.me/Visionum" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-xl text-base font-bold text-black transition-transform hover:scale-105" style={{ background: 'var(--accent)' }}>
-              Бесплатная консультация →
-            </a>
+            <button onClick={() => openOrderForm()} className="px-8 py-4 rounded-xl text-base font-bold text-black transition-transform hover:scale-105 cursor-pointer" style={{ background: 'var(--accent)' }}>
+              Заказать бота →
+            </button>
             <a href="#services" className="px-8 py-4 rounded-xl text-base font-medium transition-colors" style={{ border: '1px solid var(--border)', color: 'var(--text-dim)' }}>
               Смотреть услуги
             </a>
@@ -263,13 +305,13 @@ export default function Landing() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://t.me/Visionum" target="_blank" rel="noopener noreferrer" className="block text-center py-3 rounded-xl text-sm font-medium transition-transform hover:scale-105" style={{
+                <button onClick={() => openOrderForm()} className="block w-full text-center py-3 rounded-xl text-sm font-medium transition-transform hover:scale-105 cursor-pointer" style={{
                   background: plan.popular ? 'var(--accent)' : 'transparent',
                   color: plan.popular ? 'black' : 'var(--text)',
                   border: plan.popular ? 'none' : '1px solid var(--border)',
                 }}>
                   Заказать →
-                </a>
+                </button>
               </div>
             ))}
           </div>
@@ -320,12 +362,59 @@ export default function Landing() {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Готовы автоматизировать бизнес?</h2>
           <p className="mb-8" style={{ color: 'var(--text-dim)' }}>Напишите в Telegram — обсудим вашу задачу и назовём точную цену за 15 минут.</p>
-          <a href="https://t.me/Visionum" target="_blank" rel="noopener noreferrer" className="inline-block px-10 py-4 rounded-xl text-lg font-bold text-black transition-transform hover:scale-105" style={{ background: 'var(--accent)' }}>
-            Написать в Telegram →
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onClick={() => openOrderForm()} className="px-10 py-4 rounded-xl text-lg font-bold text-black transition-transform hover:scale-105 cursor-pointer" style={{ background: 'var(--accent)' }}>
+              Оставить заявку →
+            </button>
+            <a href="https://t.me/Visionum" target="_blank" rel="noopener noreferrer" className="px-10 py-4 rounded-xl text-lg font-medium transition-colors" style={{ border: '1px solid var(--border)', color: 'var(--text-dim)' }}>
+              Написать в Telegram
+            </a>
+          </div>
           <p className="mt-4 text-xs" style={{ color: 'var(--text-dim)' }}>Ответим в течение 1 часа • Консультация бесплатно</p>
         </div>
       </section>
+
+      {/* Order Modal */}
+      {showOrder && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4" style={{ background: 'rgba(0,0,0,0.8)' }} onClick={() => setShowOrder(false)}>
+          <div className="rounded-2xl p-6 w-full max-w-md" style={{ background: '#0d0d14', border: '1px solid var(--border)' }} onClick={e => e.stopPropagation()}>
+            {orderSent ? (
+              <div className="text-center py-8">
+                <div className="text-5xl mb-4">✅</div>
+                <h3 className="text-xl font-bold mb-2">Заявка отправлена!</h3>
+                <p className="text-sm mb-6" style={{ color: 'var(--text-dim)' }}>Мы свяжемся с вами в течение 1 часа</p>
+                <button onClick={() => setShowOrder(false)} className="px-6 py-3 rounded-xl text-sm font-medium text-black cursor-pointer" style={{ background: 'var(--accent)' }}>
+                  Отлично
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={submitOrder}>
+                <h3 className="text-xl font-bold mb-1">Заказать бота</h3>
+                <p className="text-sm mb-6" style={{ color: 'var(--text-dim)' }}>Заполните форму — мы свяжемся с вами</p>
+                <div className="space-y-3">
+                  <input name="name" placeholder="Ваше имя" required className="w-full px-4 py-3 rounded-lg text-sm outline-none focus:ring-2 focus:ring-green-500" style={{ background: 'var(--bg)', border: '1px solid var(--border)', color: 'var(--text)' }} />
+                  <input name="contact" placeholder="Telegram или телефон" required className="w-full px-4 py-3 rounded-lg text-sm outline-none focus:ring-2 focus:ring-green-500" style={{ background: 'var(--bg)', border: '1px solid var(--border)', color: 'var(--text)' }} />
+                  <select name="botType" defaultValue={orderType} required className="w-full px-4 py-3 rounded-lg text-sm outline-none focus:ring-2 focus:ring-green-500" style={{ background: 'var(--bg)', border: '1px solid var(--border)', color: 'var(--text)' }}>
+                    <option value="">Выберите тип бота</option>
+                    {BOT_TYPES.map(t => (
+                      <option key={t.value} value={t.value}>{t.label}</option>
+                    ))}
+                  </select>
+                  <textarea name="description" placeholder="Опишите задачу (необязательно)" rows={3} className="w-full px-4 py-3 rounded-lg text-sm outline-none focus:ring-2 focus:ring-green-500" style={{ background: 'var(--bg)', border: '1px solid var(--border)', color: 'var(--text)' }} />
+                </div>
+                <div className="flex gap-3 mt-5">
+                  <button type="button" onClick={() => setShowOrder(false)} className="flex-1 py-3 rounded-xl text-sm cursor-pointer" style={{ color: 'var(--text-dim)' }}>
+                    Отмена
+                  </button>
+                  <button type="submit" disabled={orderLoading} className="flex-1 py-3 rounded-xl text-sm font-bold text-black cursor-pointer transition-opacity" style={{ background: 'var(--accent)', opacity: orderLoading ? 0.6 : 1 }}>
+                    {orderLoading ? 'Отправляю...' : 'Отправить заявку'}
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="py-8 px-6" style={{ borderTop: '1px solid var(--border)' }}>
