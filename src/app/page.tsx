@@ -78,16 +78,16 @@ export default function Page() {
       </div>
 
       {/* ═══ HERO ═══ */}
-      <section className="relative pt-44 sm:pt-56 pb-32 sm:pb-44 px-6">
+      <section className="relative pt-28 sm:pt-40 md:pt-48 pb-24 sm:pb-36 px-6">
         <div className="hero-bg" />
         <div className="relative max-w-[1200px] mx-auto reveal">
-          <h1 className="text-[36px] sm:text-[56px] md:text-[72px] lg:text-[80px] font-bold leading-[1.05] tracking-tight mb-6" style={{fontFamily:"'Georgia', 'Times New Roman', serif"}}>
+          <h1 className="text-[32px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[1.08] tracking-tight mb-6" style={{fontFamily:"'Georgia', 'Times New Roman', serif"}}>
             Telegram-боты<br />для бизнеса
           </h1>
-          <p className="text-[16px] sm:text-[18px] t2 max-w-[480px] leading-relaxed mb-8">
+          <p className="text-[15px] sm:text-[17px] t2 max-w-[460px] leading-relaxed mb-8">
             Автоматизируем продажи, записи и поддержку клиентов. Используем ИИ — делаем за дни то, что обычно занимает недели.
           </p>
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-3">
             <button onClick={open} className="h-10 px-5 rounded-md text-[14px] font-medium cursor-pointer transition-colors" style={{background:'#1a1a1a',color:'#fff',border:'1px solid rgba(255,255,255,0.1)'}}>
               Заказать бота
             </button>
@@ -104,7 +104,7 @@ export default function Page() {
           <p className="text-center text-[15px] t2 max-w-[480px] mx-auto mb-12 leading-relaxed">
             Компании из разных отраслей доверяют нам автоматизацию клиентского сервиса.
           </p>
-          <div className="flex justify-center items-center gap-8 sm:gap-14 flex-wrap text-[14px] sm:text-[16px] font-medium" style={{color:'rgba(255,255,255,0.25)'}}>
+          <div className="flex justify-center items-center gap-5 sm:gap-10 flex-wrap text-[13px] sm:text-[15px] font-medium" style={{color:'rgba(255,255,255,0.25)'}}>
             <span>Салоны красоты</span>
             <span>E-commerce</span>
             <span>Клиники</span>
