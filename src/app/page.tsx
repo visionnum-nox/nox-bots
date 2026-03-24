@@ -124,10 +124,10 @@ export default function Landing() {
     <div className="min-h-screen" style={{ background: 'var(--bg)' }}>
       {/* Nav */}
       <nav className="fixed top-0 w-full z-50 backdrop-blur-xl" style={{ background: 'rgba(3,3,3,0.8)', borderBottom: '1px solid var(--border)' }}>
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-xl">🤖</span>
-            <span className="font-bold text-lg">Nox Bots</span>
+            <span className="text-lg sm:text-xl">🤖</span>
+            <span className="font-bold text-base sm:text-lg">Nox Bots</span>
           </div>
           <div className="hidden md:flex gap-8 text-sm" style={{ color: 'var(--text-dim)' }}>
             <a href="#services" className="hover:text-white transition-colors">Услуги</a>
@@ -136,46 +136,46 @@ export default function Landing() {
             <a href="#reviews" className="hover:text-white transition-colors">Отзывы</a>
             <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
           </div>
-          <a href="https://t.me/Visionum" target="_blank" rel="noopener noreferrer" className="px-5 py-2 rounded-full text-sm font-medium text-black" style={{ background: 'var(--accent)' }}>
-            Написать →
-          </a>
+          <button onClick={() => openOrderForm()} className="px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-black cursor-pointer" style={{ background: 'var(--accent)' }}>
+            Заказать →
+          </button>
         </div>
       </nav>
 
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block px-4 py-1.5 rounded-full text-xs font-medium mb-6" style={{ background: 'rgba(34,197,94,0.1)', color: 'var(--accent)', border: '1px solid rgba(34,197,94,0.2)' }}>
+          <div className="inline-block px-3 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-medium mb-4 sm:mb-6" style={{ background: 'rgba(34,197,94,0.1)', color: 'var(--accent)', border: '1px solid rgba(34,197,94,0.2)' }}>
             ⚡ Делаем за 1-3 дня то, что другие делают неделями
           </div>
-          <h1 className="text-4xl md:text-6xl font-black leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-black leading-tight mb-4 sm:mb-6">
             Telegram-боты<br />
             <span style={{ background: 'var(--gradient-1)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               для вашего бизнеса
             </span>
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10" style={{ color: 'var(--text-dim)' }}>
+          <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 px-2" style={{ color: 'var(--text-dim)' }}>
             Автоматизируем продажи, записи, поддержку и лиды через Telegram.
             Используем ИИ — поэтому быстрее и дешевле конкурентов.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={() => openOrderForm()} className="px-8 py-4 rounded-xl text-base font-bold text-black transition-transform hover:scale-105 cursor-pointer" style={{ background: 'var(--accent)' }}>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
+            <button onClick={() => openOrderForm()} className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold text-black transition-transform hover:scale-105 cursor-pointer" style={{ background: 'var(--accent)' }}>
               Заказать бота →
             </button>
-            <a href="#services" className="px-8 py-4 rounded-xl text-base font-medium transition-colors" style={{ border: '1px solid var(--border)', color: 'var(--text-dim)' }}>
+            <a href="#services" className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-medium transition-colors text-center" style={{ border: '1px solid var(--border)', color: 'var(--text-dim)' }}>
               Смотреть услуги
             </a>
           </div>
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-16 max-w-lg mx-auto">
+          <div className="grid grid-cols-3 gap-4 sm:gap-8 mt-10 sm:mt-16 max-w-lg mx-auto">
             {[
               { num: '50+', label: 'ботов создано' },
               { num: '1-3', label: 'дня на проект' },
               { num: '24/7', label: 'работают без вас' },
             ].map(s => (
               <div key={s.label}>
-                <div className="text-2xl md:text-3xl font-black" style={{ color: 'var(--accent)' }}>{s.num}</div>
-                <div className="text-xs mt-1" style={{ color: 'var(--text-dim)' }}>{s.label}</div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-black" style={{ color: 'var(--accent)' }}>{s.num}</div>
+                <div className="text-[10px] sm:text-xs mt-1" style={{ color: 'var(--text-dim)' }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -183,13 +183,13 @@ export default function Landing() {
       </section>
 
       {/* Services */}
-      <section id="services" className="py-20 px-6" style={{ background: 'var(--bg-section)' }}>
+      <section id="services" className="py-12 sm:py-20 px-4 sm:px-6" style={{ background: 'var(--bg-section)' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Какие боты мы делаем</h2>
-            <p style={{ color: 'var(--text-dim)' }}>Выберите тип или опишите свою задачу — подберём решение</p>
+          <div className="text-center mb-8 sm:mb-14">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Какие боты мы делаем</h2>
+            <p className="text-sm sm:text-base" style={{ color: 'var(--text-dim)' }}>Выберите тип или опишите свою задачу — подберём решение</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {BOTS.map(bot => (
               <div key={bot.title} className="rounded-2xl p-6 transition-all hover:-translate-y-1" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
                 <div className="text-3xl mb-4">{bot.icon}</div>
@@ -213,10 +213,10 @@ export default function Landing() {
       </section>
 
       {/* Why Us */}
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">Почему выбирают нас</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-14">Почему выбирают нас</h2>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {[
               { icon: '⚡', title: 'Скорость', desc: 'ИИ-ускорение разработки. За 1-3 дня вместо 1-2 недель у конкурентов.' },
               { icon: '💰', title: 'Цена', desc: 'Начинаем от 2 500₽. Без скрытых платежей, предоплат и абонентских.' },
@@ -234,9 +234,9 @@ export default function Landing() {
       </section>
 
       {/* Process */}
-      <section id="process" className="py-20 px-6" style={{ background: 'var(--bg-section)' }}>
+      <section id="process" className="py-12 sm:py-20 px-4 sm:px-6" style={{ background: 'var(--bg-section)' }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">Как мы работаем</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-14">Как мы работаем</h2>
           <div className="space-y-8">
             {PROCESS.map(p => (
               <div key={p.step} className="flex gap-6 items-start">
@@ -258,11 +258,11 @@ export default function Landing() {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="py-20 px-6">
+      <section id="pricing" className="py-12 sm:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Цены</h2>
-          <p className="text-center mb-14" style={{ color: 'var(--text-dim)' }}>Фиксированная цена. Без сюрпризов.</p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4">Цены</h2>
+          <p className="text-center text-sm sm:text-base mb-8 sm:mb-14" style={{ color: 'var(--text-dim)' }}>Фиксированная цена. Без сюрпризов.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {[
               {
                 name: 'Базовый',
@@ -319,10 +319,10 @@ export default function Landing() {
       </section>
 
       {/* Reviews */}
-      <section id="reviews" className="py-20 px-6" style={{ background: 'var(--bg-section)' }}>
+      <section id="reviews" className="py-12 sm:py-20 px-4 sm:px-6" style={{ background: 'var(--bg-section)' }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">Отзывы клиентов</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-14">Отзывы клиентов</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {REVIEWS.map(r => (
               <div key={r.name} className="rounded-2xl p-6" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
                 <div className="text-yellow-400 mb-3">{'⭐'.repeat(r.rating)}</div>
@@ -338,9 +338,9 @@ export default function Landing() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-20 px-6">
+      <section id="faq" className="py-12 sm:py-20 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">Частые вопросы</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-14">Частые вопросы</h2>
           <div className="space-y-3">
             {FAQ.map((item, i) => (
               <div key={i} className="rounded-xl overflow-hidden" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
@@ -358,10 +358,10 @@ export default function Landing() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6" style={{ background: 'var(--bg-section)' }}>
+      <section className="py-12 sm:py-20 px-4 sm:px-6" style={{ background: 'var(--bg-section)' }}>
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Готовы автоматизировать бизнес?</h2>
-          <p className="mb-8" style={{ color: 'var(--text-dim)' }}>Напишите в Telegram — обсудим вашу задачу и назовём точную цену за 15 минут.</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Готовы автоматизировать бизнес?</h2>
+          <p className="text-sm sm:text-base mb-6 sm:mb-8" style={{ color: 'var(--text-dim)' }}>Напишите в Telegram — обсудим вашу задачу и назовём точную цену за 15 минут.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button onClick={() => openOrderForm()} className="px-10 py-4 rounded-xl text-lg font-bold text-black transition-transform hover:scale-105 cursor-pointer" style={{ background: 'var(--accent)' }}>
               Оставить заявку →
@@ -417,8 +417,8 @@ export default function Landing() {
       )}
 
       {/* Footer */}
-      <footer className="py-8 px-6" style={{ borderTop: '1px solid var(--border)' }}>
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <footer className="py-6 sm:py-8 px-4 sm:px-6" style={{ borderTop: '1px solid var(--border)' }}>
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
           <div className="flex items-center gap-2">
             <span>🤖</span>
             <span className="font-bold">Nox Bots</span>
