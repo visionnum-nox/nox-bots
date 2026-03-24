@@ -84,6 +84,8 @@ a { color: inherit; text-decoration: none; }
 .chat-wrap.visible .chat-msg:nth-child(4) { opacity: 1; transform: none; transition-delay: 1.55s; }
 .chat-wrap.visible .chat-msg:nth-child(5) { opacity: 1; transform: none; transition-delay: 2.0s; }
 .chat-wrap.visible .chat-msg:nth-child(6) { opacity: 1; transform: none; transition-delay: 2.45s; }
+.chat-wrap.visible .chat-msg:nth-child(7) { opacity: 1; transform: none; transition-delay: 2.9s; }
+.chat-wrap.visible .chat-msg:nth-child(8) { opacity: 1; transform: none; transition-delay: 3.35s; }
 
 /* Typing dots — show before each bot message */
 @keyframes bounce-dot {
