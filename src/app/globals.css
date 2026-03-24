@@ -1,13 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --accent: #7C3AED;
-  --accent-light: #A78BFA;
-  --dim: #71717a;
-  --card: #0a0a0f;
-  --b: rgba(255,255,255,0.07);
-}
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
@@ -19,34 +11,18 @@ body {
   overflow-x: hidden;
 }
 
-::selection { background: rgba(124,58,237,0.4); }
+::selection { background: rgba(255,255,255,0.15); }
 
-/* Gradient text that works everywhere */
-.gt {
-  background: linear-gradient(135deg, #7C3AED, #2563EB);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
+a { color: inherit; }
 
-/* Card hover */
-.ch { transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
-.ch:hover { transform: translateY(-3px); border-color: rgba(124,58,237,0.3) !important; box-shadow: 0 8px 30px rgba(124,58,237,0.1); }
+/* Resend-style: simple, clean */
+.border-subtle { border: 1px solid rgba(255,255,255,0.08); }
+.bg-card { background: rgba(255,255,255,0.03); }
+.text-secondary { color: #a1a1a1; }
+.text-tertiary { color: #666; }
 
-/* Shimmer on buttons */
-@keyframes sh { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
-.shimmer { position: relative; overflow: hidden; }
-.shimmer::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
-  background-size: 200% 100%;
-  animation: sh 3s ease-in-out infinite;
-}
+.hover-lift { transition: transform 0.2s, box-shadow 0.2s; }
+.hover-lift:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
 
-/* Pulse */
-@keyframes pulse2 { 0%,100%{opacity:1} 50%{opacity:0.4} }
-.pulse2 { animation: pulse2 2s infinite; }
-
-/* FAQ smooth */
+/* Smooth FAQ */
 .faq-body { overflow: hidden; transition: max-height 0.3s ease, opacity 0.25s ease; }
