@@ -110,7 +110,7 @@ export default function Landing() {
         </nav>
 
         {/* ── HERO ── */}
-        <section className="relative pt-32 sm:pt-44 pb-20 sm:pb-32 px-4 sm:px-6 overflow-hidden">
+        <section className="relative pt-40 sm:pt-48 pb-20 sm:pb-32 px-4 sm:px-6 overflow-hidden">
           {/* Background glow */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full opacity-30 pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.2) 0%, transparent 70%)' }} />
 
@@ -121,16 +121,13 @@ export default function Landing() {
               Принимаем заказы
             </div>
 
-            <h1 className="text-[2.5rem] leading-[1.05] sm:text-6xl md:text-7xl font-black tracking-tight mb-6 sm:mb-8">
-              Telegram-боты
-              <br />
+            <h1 className="text-4xl leading-[1.1] sm:text-6xl md:text-7xl font-black tracking-tight mb-5 sm:mb-8">
+              Telegram-боты<br />
               <span className="gradient-text">для бизнеса</span>
             </h1>
 
-            <p className="text-base sm:text-lg leading-relaxed max-w-md mx-auto mb-10 sm:mb-12" style={{ color: 'var(--text-dim)' }}>
-              Автоматизируем продажи, записи и поддержку.
-              <br className="hidden sm:block" />
-              С ИИ — в 3× быстрее и дешевле.
+            <p className="text-[15px] sm:text-lg leading-relaxed max-w-md mx-auto mb-10 sm:mb-12" style={{ color: 'var(--text-dim)' }}>
+              Автоматизируем продажи, записи и поддержку. С ИИ — в 3× быстрее и дешевле.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
